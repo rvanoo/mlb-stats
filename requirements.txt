@@ -1,0 +1,7 @@
+Flask==1.0.2
+flask-dynamo==0.1.2
+Flask-Redis==0.3.0
+ipython==6.4.0
+ohmysportsfeedspy==1.0.0
+pygal==2.4.0
+requests==2.12.4

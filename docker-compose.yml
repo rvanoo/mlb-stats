@@ -1,0 +1,35 @@
+version: '3.6'
+
+services:
+  web:
+    build: .
+    command: flask run -h '0.0.0.0'
+#    depends_on:
+#      - dynamodb
+#      - mysql
+    environment:
+      - FLASK_DEBUG=1
+      - MYSPORTSFEEDS_PASSWORD=${MYSPORTSFEEDS_PASSWORD}
+      - MYSPORTSFEEDS_USER=${MYSPORTSFEEDS_USER}
+    ports:
+      - "80:5000"
+    volumes:
+      - .:/app
+
+#  dynamodb:
+#    image: dwmkerr/dynamodb
+#    command: ["-dbPath", "/data"]
+#    volumes:
+#      - dynamodb-data:/data
+
+#  mysql:
+#    image: mariadb
+#    restart: always
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=root
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+
+#volumes:
+#  dynamodb-data:
+#  mysql-data:
